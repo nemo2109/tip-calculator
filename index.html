@@ -9,6 +9,9 @@
   <!-- Link para el favicon -->
   <link rel="icon" type="image/x-icon" href="./Assets/img/favicon-32x32.png">
 
+  <!--Link para iconos de FontAwesome-->
+  <script src="https://kit.fontawesome.com/ea4d53e095.js" crossorigin="anonymous"></script>
+
   <!-- Link para archivo de CSS-->
   <!--<link rel="stylesheet" href="./Assets/css/style.css">-->
 </head>
@@ -23,13 +26,17 @@
   <!--Main Section-->
   <main id="main">
    <form id="main-form" class="form">
-    <label>Bill</label>
-    <input
-    type="number"
-    id="total-bill"
-    class="form__input"
-    
-    >
+    <div class="form__box">
+      <label class="form__box__label">Bill</label>
+      <div class="form__box__inputs">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <input
+        type="number"
+        id="total-bill"
+        class="form__box__input"
+        >
+      </div>
+    </div>
 
     <div class="form__btns">
       <button type="button" class="form__btns__button">0%</button>
@@ -38,19 +45,42 @@
       <button type="button" class="form__btns__button">20%</button>
       <button type="button" class="form__btns__button">25%</button>
       <button type="button" class="form__btns__button">50%</button>
-      <input class="form__btns__button" type="text" placeholder="Custom">
+      <input 
+      class="form__btns__button" 
+      type="text" 
+      placeholder="Custom"
+      >
+    </div>
+    <div class="form__box">
+      <label class="form__box__label">
+        Number of People
+      </label>
+      <div class="form__box__inputs">
+        <i class="fa-solid fa-user"></i>
+        <input
+        type="number"
+        id="total-people"
+        class="form__box__input"
+        >
+      </div>
+    </div>
+   </form>
+
+   <section id="result" class="result">
+    <div class="result__tip">
+     <h3>Tip Amount<span>/ person</span></h3>
+     <p id="result__tip">$0.00</p>
     </div>
 
-    <label class="form__label">
-      Number of People
-    </label>
-    <input
-    type="number"
-    id="total-people"
-    class="form__input"
-    >
+    <div class="result__total">
+      <h3>Total<span>/ person</span></h3>
+      <p id="result__total">$0.00</p>
+    </div>
 
-   </form>
+    
+    <button type="button" class="result__btn">Reset</button>
+
+   </section>
   </main>
   
   <!--Archivo de JavaScript-->
