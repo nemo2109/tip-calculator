@@ -1,15 +1,52 @@
 import tipCalculator from './modules/tipCalculator.js';
 import totalFinal from './modules/totalFinal.js';
 
+//Constante de los elemntos de HTML
+const main = document.getElementById('main');
+const form = document.getElementById('main-form');
+
 //Guardar valores en variables
-let subtotal = 142.55;
-let porcenTip = 0.15;
-let personas = 5;
+const subtotal = document.getElementById('total-bill');
+const porcenDiv = document.getElementById('form-btns');
+const personas = document.getElementById('total-people');
 
-const resultadoTip = tipCalculator(subtotal, porcenTip, personas);
+//Variable para almacenar el valor porcentual seleccionado
+let porcenTip;
 
-console.dir(resultadoTip.toFixed(2));
+// Evento para escuchar a que boton le estamos dando click
+porcenDiv.addEventListener('click', (e) => {
+  porcenTip = e.target;
+  console.log(porcenTip);
 
-const resultadoFinal = totalFinal(subtotal, personas, resultadoTip);
+  // Condicion para escuchar al custom
+  if (e.target.id === 'custom-tip') {
+    console.log('Si soy custom');
+  }
 
-console.log(resultadoFinal.toFixed(2));
+});
+
+// Crear un evento de submit para la forma
+form.addEventListener('submit', (e) => {
+  // Evitar la action por defecto
+  e.preventDefault();
+
+  // Crear un objecto constante con los valores de la forma
+  const formulario = {
+    subTotalF: subtotal.value,
+    porcenTipF: porcenTip.value,
+    personasF: personas.value,
+  }
+
+  console.log(formulario);
+
+  const { subTotalF, porcenTipF, personasF } = formulario;
+
+  const tipFinal = tipCalculator(subTotalF, porcenTipF, personasF);
+
+  console.log(tipFinal);
+
+  const totalF = totalFinal(subTotalF, personasF, tipFinal);
+
+  console.log(totalF);
+
+});
