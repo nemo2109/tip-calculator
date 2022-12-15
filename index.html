@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+
+  <!-- Link para el favicon -->
+  <link rel="icon" type="image/x-icon" href="./Assets/img/favicon-32x32.png">
+
+  <!--Link para iconos de FontAwesome-->
+  <script src="https://kit.fontawesome.com/ea4d53e095.js" crossorigin="anonymous"></script>
+
+  <!-- Link para archivo de CSS-->
+  <!--<link rel="stylesheet" href="./Assets/css/style.css">-->
+</head>
+
+<body>
+
+  <!--Encabezado-->
+  <header id="header" class="header">
+    <h1 class="header__title">Splitter</h1>
+  </header>
+
+  <!--Main Section-->
+  <main id="main">
+   <form id="main-form" class="form">
+    <div class="form__box">
+      <label class="form__box__label">Bill</label>
+      <div class="form__box__inputs">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <input
+        type="number"
+        id="total-bill"
+        class="form__box__input"
+        >
+      </div>
+    </div>
+
+    <div class="form__btns" id="form-btns">
+      <button type="button" class="form__btns__button">0%</button>
+      <button type="button" class="form__btns__button">10%</button>
+      <button type="button" class="form__btns__button">15%</button>
+      <button type="button" class="form__btns__button">20%</button>
+      <button type="button" class="form__btns__button">25%</button>
+      <button type="button" class="form__btns__button">50%</button>
+      <input 
+      class="form__btns__button" 
+      type="text" 
+      placeholder="Custom"
+      >
+    </div>
+    <div class="form__box">
+      <label class="form__box__label">
+        Number of People
+      </label>
+      <div class="form__box__inputs">
+        <i class="fa-solid fa-user"></i>
+        <input
+        type="number"
+        id="total-people"
+        class="form__box__input"
+        >
+      </div>
+    </div>
+
+    <button type="submit">Calculate</button>
+   </form>
+
+   <section id="result" class="result">
+    <div class="result__tip">
+     <h3>Tip Amount<span>/ person</span></h3>
+     <p id="result__tip">$0.00</p>
+    </div>
+
+    <div class="result__total">
+      <h3>Total<span>/ person</span></h3>
+      <p id="result__total">$0.00</p>
+    </div>
+
+    
+    <button type="button" class="result__btn">Reset</button>
+
+   </section>
+  </main>
+  
+  <!--Archivo de JavaScript-->
+  <script src="./Js/main.js" type="module"></script>
+</body>
+</html>
