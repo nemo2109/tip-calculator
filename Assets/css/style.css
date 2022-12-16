@@ -1,3 +1,14 @@
+@charset "UTF-8";
+/*
+Variables
+*/
+* {
+  font-family: "Space Mono", monospace;
+}
+
+/*
+Estilos pantalla pequeña
+*/
 body {
   background-color: hsl(185deg, 41%, 84%);
 }
@@ -19,6 +30,11 @@ main {
   padding: 1rem;
 }
 
+.form__box__imagen {
+  position: relative;
+  left: 5%;
+  width: 3%;
+}
 .form__btns__button {
   background-color: hsl(183deg, 100%, 15%);
   border: none;

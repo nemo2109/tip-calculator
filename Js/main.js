@@ -1,5 +1,6 @@
 import tipCalculator from './modules/tipCalculator.js';
 import totalFinal from './modules/totalFinal.js';
+import updateTip from './modules'
 
 //Constante de los elemntos de HTML
 const main = document.getElementById('main');

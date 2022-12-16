@@ -1,7 +1,22 @@
-//Estilos pantalla pequeña
+/*
+Variables
+*/
+$main-bg: hsl(185, 41%, 84%);
+$white: hsl(0, 0%, 100%);
+$input-bg: hsl(189, 41%, 97%);
+$input-text: hsl(183, 100%, 15%);
+
+* {
+  font-family: 'Space Mono', monospace;
+}
+ 
+
+/*
+Estilos pantalla pequeña
+*/
 
 body{
-  background-color: hsl(185, 41%, 84%);
+  background-color: $main-bg;
 }
 
 .header{
@@ -16,12 +31,19 @@ body{
 }
 
 main{
-  background-color: hsl(0, 0%, 100%);
+  background-color: $white;
   border-radius: 1rem;
   padding: 1rem;
 }
 
 .form{
+  &__box{
+    &__imagen{
+      position: relative;
+      left: 5%;
+      width: 3%;
+    }
+  }
   &__btns{
     &__button{
       background-color:hsl(183, 100%, 15%) ;
