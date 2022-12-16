@@ -1,0 +1,49 @@
+body {
+  background-color: hsl(185deg, 41%, 84%);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__imagen {
+  width: 25%;
+  height: 50px;
+  padding: 3rem;
+}
+
+main {
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.form__btns__button {
+  background-color: hsl(183deg, 100%, 15%);
+  border: none;
+  color: white;
+}
+
+.result {
+  background-color: hsl(183deg, 100%, 15%);
+  border-radius: 1rem;
+  padding: 2%;
+}
+.result__tip {
+  color: white;
+}
+.result__total {
+  color: white;
+}
+.result__btn {
+  width: 13rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  left: 3rem;
+  background-color: hsl(172deg, 67%, 45%);
+  border: none;
+}
+
+/*# sourceMappingURL=style.css.map */

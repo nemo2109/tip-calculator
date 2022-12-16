@@ -1,0 +1,54 @@
+//Estilos pantalla pequeña
+
+body{
+  background-color: hsl(185, 41%, 84%);
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__imagen{
+    width: 25%;
+    height: 50px;
+    padding: 3rem;
+  }
+}
+
+main{
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.form{
+  &__btns{
+    &__button{
+      background-color:hsl(183, 100%, 15%) ;
+      border: none;
+      color: white;
+    }
+  }
+}
+
+
+.result{
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 1rem;
+  padding: 2%;
+  &__tip{
+    color: white;
+  }
+  &__total{
+    color: white;
+  }
+  &__btn{
+    width: 13rem;
+    padding: 0.5rem;
+    border-radius: 0.50rem;
+    position: relative;
+    left: 3rem;
+    background-color:hsl(172, 67%, 45%);
+    border: none;
+  }
+}
