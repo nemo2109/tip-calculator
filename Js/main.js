@@ -1,10 +1,15 @@
 import tipCalculator from './modules/tipCalculator.js';
 import totalFinal from './modules/totalFinal.js';
-import updateTip from './modules'
+import updateTip from './modules/updateTip.js';
+import updateTotal from './modules/totalFinal.js';
 
-//Constante de los elemntos de HTML
+//Constantes de los elemntos de HTML
 const main = document.getElementById('main');
 const form = document.getElementById('main-form');
+
+
+const tipResult = document.getElementById('result-tip');
+const totalResult = document.getElementById('result-total');
 
 //Guardar valores en variables
 const subtotal = document.getElementById('total-bill');
@@ -47,4 +52,7 @@ form.addEventListener('submit', (e) => {
   const totalF = totalFinal(subTotalF, personasF, tipFinal);
 
 
+  //Llamar a las funciones que actualizan el DOM
+  updateTip(tipFinal, tipResult);
+  updateTotal(totalF, totalResult);
 });
