@@ -1,9 +1,9 @@
 import tipCalculator from './modules/tipCalculator.js';
 import totalFinal from './modules/totalFinal.js';
 import updateTip from './modules/updateTip.js';
-import updateTotal from './modules/updateTotal';
+import updateTotal from './modules/updateTotal.js';
 
-//Constantes de los elemntos de HTML
+//Constantes de los elementos de HTML
 const main = document.getElementById('main');
 const form = document.getElementById('main-form');
 
@@ -36,7 +36,7 @@ porcenDiv.addEventListener('click', (e) => {
   porcenTip.classList.add('active');
 
   // Condicion para escuchar al custom
-  if (e.target === custom-tip) {
+  if (e.target === customTip) {
     custom = e.target;
 
     custom.classList.remove('active')
@@ -63,10 +63,9 @@ form.addEventListener('submit', (e) => {
 
   const totalF = totalFinal(subTotalF, personasF, tipFinal);
 
-
-  //Llamar a las funciones que actualizan el DOM
-  updateTip(tipFinal, tipResult);
-  updateTotal(totalF, totalResult);
+ //Llamar a las funciones que actualizan el DOM
+  updateTip(tipFinal.toFixed(2), tipResult);
+  updateTotal(totalF.toFixed(2), totalResult);
 });
 
 //Boton para reiniciar la tip calculator

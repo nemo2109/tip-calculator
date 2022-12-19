@@ -31,7 +31,7 @@
   </header>
 
   <!--Main Section-->
-  <main id="main">
+  <main id="main" class="main">
    <form id="main-form" class="form">
     <div class="form__box">
       <label class="form__box__label">Bill</label>
@@ -40,23 +40,32 @@
         <input
         type="number"
         id="total-bill"
-        class="form__box__input"
+        required
+        placeholder="0"
         >
       </div>
     </div>
 
-    <div class="form__btns" id="form-btns">
-      <button type="button" class="form__btns__button">5%</button>
-      <button type="button" class="form__btns__button">10%</button>
-      <button type="button" class="form__btns__button">15%</button>
-      <button type="button" class="form__btns__button">25%</button>
-      <button type="button" class="form__btns__button">50%</button>
-      <input 
-      class="form__btns__botton" 
-      type="text" 
-      placeholder="Custom"
-      >
+    <div class="form__box">
+      <label class="form__box__label">Select Tip %</label>
+  
+      <div class="form__box__btns" id="form-btns">
+        <button type="button" class="form__box__btns__button" value="0.05">5%</button>
+        <button type="button" class="form__box__btns__button" value="0.10">10%</button>
+        <button type="button" class="form__box__btns__button" value="0.15">15%</button>
+        <button type="button" class="form__box__btns__button" value="0.25">25%</button>
+        <button type="button" class="form__box__btns__button" value="0.50">50%</button>
+        <input 
+        class="form__box__btns__botton" 
+        type="text" 
+        placeholder="Custom"
+        id="custom-tip"
+        >
+      </div>
     </div>
+
+
+
     <div class="form__box">
       <label class="form__box__label">
         Number of People
@@ -66,23 +75,26 @@
         <input
         type="number"
         id="total-people"
-        class="form__box__input"
+        required
+        placeholder="0"
         >
       </div>
     </div>
 
-    <button type="submit">Calculate</button>
+    <button type="submit" class="form__calculate">Calculate</button>
    </form>
 
    <section id="result" class="result">
-    <div class="result__tip">
-     <h3>Tip Amount<span>/ person</span></h3>
-     <p id="result__tip">$0.00</p>
-    </div>
-
-    <div class="result__total">
-      <h3>Total<span>/ person</span></h3>
-      <p id="result__total">$0.00</p>
+    <div class="result__first">
+      <div class="result__box">
+       <h3>Tip Amount<span>/ person</span></h3>
+       <p id="result__tip">$0.00</p>
+      </div>
+  
+      <div class="result__box">
+        <h3>Total<span>/ person</span></h3>
+        <p id="result__total">$0.00</p>
+      </div>
     </div>
 
     
