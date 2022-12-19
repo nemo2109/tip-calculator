@@ -63,9 +63,9 @@ form.addEventListener('submit', (e) => {
 
   const totalF = totalFinal(subTotalF, personasF, tipFinal);
 
- //Llamar a las funciones que actualizan el DOM
-  updateTip(tipFinal.toFixed(2), tipResult);
-  updateTotal(totalF.toFixed(2), totalResult);
+   //Llamar a las funciones que actualizan el DOM
+    updateTip(tipFinal.toFixed(2), tipResult);
+    updateTotal(totalF.toFixed(2), totalResult);
 });
 
 //Boton para reiniciar la tip calculator

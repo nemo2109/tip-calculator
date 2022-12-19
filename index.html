@@ -42,6 +42,7 @@
         id="total-bill"
         required
         placeholder="0"
+        class="form__box__input"
         >
       </div>
     </div>
@@ -56,7 +57,7 @@
         <button type="button" class="form__box__btns__button" value="0.25">25%</button>
         <button type="button" class="form__box__btns__button" value="0.50">50%</button>
         <input 
-        class="form__box__btns__botton" 
+        class="form__box__btns__button" 
         type="text" 
         placeholder="Custom"
         id="custom-tip"
@@ -77,23 +78,24 @@
         id="total-people"
         required
         placeholder="0"
+        class="form__box__input"
         >
       </div>
     </div>
 
-    <button type="submit" class="form__calculate">Calculate</button>
+    <button type="submit" class="form__box__calculate">CALCULATE</button>
    </form>
 
    <section id="result" class="result">
     <div class="result__first">
       <div class="result__box">
-       <h3>Tip Amount<span>/ person</span></h3>
-       <p id="result__tip">$0.00</p>
+       <h3 class="result__title">Tip Amount<span>/ person</span></h3>
+       <p id="result-tip" class="result__total">$0.00</p>
       </div>
   
       <div class="result__box">
-        <h3>Total<span>/ person</span></h3>
-        <p id="result__total">$0.00</p>
+        <h3 class="result__title">Total<span>/ person</span></h3>
+        <p id="result-total" class="result__total">$0.00</p>
       </div>
     </div>
 
