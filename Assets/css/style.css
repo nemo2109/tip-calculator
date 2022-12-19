@@ -38,7 +38,13 @@ main {
 .form__btns__button {
   background-color: hsl(183deg, 100%, 15%);
   border: none;
-  color: white;
+  color: hsl(0deg, 0%, 100%);
+  transition: 0.25s;
+  outline: none;
+}
+.form__btns__button.active {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
 }
 
 .result {
