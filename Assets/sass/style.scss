@@ -107,6 +107,7 @@ body{
         padding: 0.7rem 0;
         margin-right: 2%;
         margin-top: 5%;
+        cursor: pointer;
       }
 
       #custom-tip{
@@ -177,16 +178,39 @@ body{
 @media screen and (min-width: 1440px) {
 
   body{
-    padding: 20%;
+    padding: 9%;
   }
 
   .main{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.8rem;
+    width: 100%;
+  }
+
+  .form{
+    &__box{
+      width: 100%;
+    }
   }
 
   .header{
     &__imagen{
-      width: 30%;
+      width: 10%;
+    }
+  }
+
+  .result{
+    &__first{
+      width: 30rem;
+      height: 24rem;
+      margin-bottom: 3rem;
+      padding: 1rem;
+    }
+    &__total{
+      font-size: 2.5rem;
+      margin: 0%;
     }
   }
   

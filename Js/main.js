@@ -19,7 +19,7 @@ const porcenDiv = document.getElementById('form-btns');
 const personas = document.getElementById('total-people');
 
 //Metodo para seleccionar todos los botones
-const btns = document.querySelectorAll('.form__btns__button');
+const btns = document.querySelectorAll('.form__box__btns__button');
 const resetBtn = document.getElementById('reset-btn')
 
 //Variable para almacenar el valor porcentual seleccionado
