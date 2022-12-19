@@ -155,4 +155,16 @@ body {
   font-size: 1.5rem;
 }
 
+@media screen and (min-width: 1440px) {
+  body {
+    padding: 20%;
+  }
+  .main {
+    display: flex;
+  }
+  .header__imagen {
+    width: 30%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

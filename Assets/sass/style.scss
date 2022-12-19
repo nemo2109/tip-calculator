@@ -171,6 +171,23 @@ body{
     color: $input-text;
     width: 100%;
     font-size: 1.5rem;
+  } 
+}
+
+@media screen and (min-width: 1440px) {
+
+  body{
+    padding: 20%;
+  }
+
+  .main{
+    display: flex;
+  }
+
+  .header{
+    &__imagen{
+      width: 30%;
+    }
   }
   
 }
