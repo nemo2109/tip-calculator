@@ -12,75 +12,95 @@
   <!--Link para iconos de FontAwesome-->
   <script src="https://kit.fontawesome.com/ea4d53e095.js" crossorigin="anonymous"></script>
 
+  <!-- Fonts de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;700&family=Space+Mono:wght@400;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+ 
+
   <!-- Link para archivo de CSS-->
-  <!--<link rel="stylesheet" href="./Assets/css/style.css">-->
+  <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 
 <body>
-
   <!--Encabezado-->
   <header id="header" class="header">
-    <h1 class="header__title">Splitter</h1>
+    <img src="./Assets/img/logo.svg" class="header__imagen">
   </header>
 
   <!--Main Section-->
-  <main id="main">
+  <main id="main" class="main">
    <form id="main-form" class="form">
     <div class="form__box">
       <label class="form__box__label">Bill</label>
       <div class="form__box__inputs">
-        <i class="fa-solid fa-dollar-sign"></i>
+        <img src="./Assets/img/icon-dollar.svg" class="form__box__imagen">
         <input
         type="number"
         id="total-bill"
+        required
+        placeholder="0"
         class="form__box__input"
         >
       </div>
     </div>
 
-    <div class="form__btns" id="form-btns">
-      <button type="button" class="form__btns__button">0%</button>
-      <button type="button" class="form__btns__button">10%</button>
-      <button type="button" class="form__btns__button">15%</button>
-      <button type="button" class="form__btns__button">20%</button>
-      <button type="button" class="form__btns__button">25%</button>
-      <button type="button" class="form__btns__button">50%</button>
-      <input 
-      class="form__btns__button" 
-      type="text" 
-      placeholder="Custom"
-      >
+    <div class="form__box">
+      <label class="form__box__label">Select Tip %</label>
+  
+      <div class="form__box__btns" id="form-btns">
+        <button type="button" class="form__box__btns__button" value="0.05">5%</button>
+        <button type="button" class="form__box__btns__button" value="0.10">10%</button>
+        <button type="button" class="form__box__btns__button" value="0.15">15%</button>
+        <button type="button" class="form__box__btns__button" value="0.25">25%</button>
+        <button type="button" class="form__box__btns__button" value="0.50">50%</button>
+        <input 
+        class="form__box__btns__button" 
+        type="text" 
+        placeholder="Custom"
+        id="custom-tip"
+        >
+      </div>
     </div>
+
+
+
     <div class="form__box">
       <label class="form__box__label">
         Number of People
       </label>
       <div class="form__box__inputs">
-        <i class="fa-solid fa-user"></i>
+        <img src="./Assets/img/icon-person.svg" class="form__box__imagen">
         <input
         type="number"
         id="total-people"
+        required
+        placeholder="0"
         class="form__box__input"
         >
       </div>
     </div>
 
-    <button type="submit">Calculate</button>
+    <button type="submit" class="form__box__calculate">CALCULATE</button>
    </form>
 
    <section id="result" class="result">
-    <div class="result__tip">
-     <h3>Tip Amount<span>/ person</span></h3>
-     <p id="result__tip">$0.00</p>
-    </div>
-
-    <div class="result__total">
-      <h3>Total<span>/ person</span></h3>
-      <p id="result__total">$0.00</p>
+    <div class="result__first">
+      <div class="result__box">
+       <h3 class="result__title">Tip Amount<span>/ person</span></h3>
+       <p id="result-tip" class="result__total">$0.00</p>
+      </div>
+  
+      <div class="result__box">
+        <h3 class="result__title">Total<span>/ person</span></h3>
+        <p id="result-total" class="result__total">$0.00</p>
+      </div>
     </div>
 
     
-    <button type="button" class="result__btn">Reset</button>
+    <button type="button" class="result__btn" id="reset-btn">RESET</button>
 
    </section>
   </main>
