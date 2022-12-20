@@ -34,12 +34,12 @@ let checkBtn = false;
 
 // Evento para escuchar a que boton le estamos dando click
 porcenDiv.addEventListener('click', (e) => {
-  for(let i = 0; i < btns.length; i++){
+  for (let i = 0; i < btns.length; i++) {
     btns[i].classList.remove('active');
   }
 
-  if (e.target.classList.caja('.form__box__btns__button')) {
-    checkBtn = true
+  if (e.target.classList.contains('form__box__btns__button')) {
+    checkBtn = true;
   }
 
   porcenTip = e.target;
@@ -61,35 +61,35 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   if(validateClick(checkBtn)) {
-    //Si le dieron click a custom, entonces dividamos su valor entre 100
-    if(checkCustom){
+    //Si le dieron click a custom, entonces dividamos su valor entre 10
+    if (checkCustom) {
       porcenTip.value = porcenTip.value / 100;
     }
-  
-    // Crear un objecto constante con los valores de la forma
-    const formulario = {
-      subTotalF: subtotal.value,
-      porcenTipF: porcenTip.value,
-      personasF: personas.value,
-    }
-  
 
-    const { subTotalF, porcenTipF, personasF } = formulario;
-    
-      if (validateAll(subTotalF, personasF)) {
-        updateDOM(subTotalF, porcenTipF, personasF);
-        subtotal.parentElement.classList.add('valid');
-        personas.parentElement.classList.add('valid');
+    //Crear objeto constante con los valores de la forma
+    const formulario = {
+      subtotalF: parseFloat(subtotal.value),
+      porcenTipF: parseFloat(porcenTip.value),
+      personasF: parseFloat(personas.value),
+    }
+
+    const { subtotalF, porcenTipF, personasF } = formulario;
+    if (validateAll(subtotalF, personasF)) {
+      updateDOM(subtotalF, porcenTipF, personasF);
+      subtotal.parentElement.classList.add('valid');
+      personas.parentElement.classList.add('valid');
   
-        removeBorder(subTotalF, 'valid');
-        removeBorder(personas, 'valid');
+      removeBorder(subtotal, 'valid');
+      removeBorder(personas, 'valid');
     }
   }
-
+  
 });
 
+
+
 //Funcion para actualizar el DOM
-function updateDOM(subtotalF, porcenTipF, personasF){
+function updateDOM(subTotalF, porcenTipF, personasF) {
   const tipFinal = tipCalculator(subTotalF, porcenTipF, personasF);
   
   const totalF = totalFinal(subTotalF, personasF, tipFinal);
@@ -150,10 +150,12 @@ function notZero(input) {
 function validateAll(subTotalF, personasF) {
   let check = true;
 
+  console.log(subTotalF);
   // Validar que no sean ceros
   if (!notZero(parseFloat(subTotalF))) {
     check = false;
 
+    console.log(subtotal);
     subtotal.parentElement.classList.add('invalid');
     invalid1.innerText = 'No puede ser cero o menor que cero';
 
@@ -174,17 +176,17 @@ function validateAll(subTotalF, personasF) {
   return check;
 }
 
-function validateClick(checkBtn){
+function validateClick(checkBtn) {
   let check = true;
 
   if (!checkBtn) {
     check = false;
   
-  invalid3.innerText = 'Tienes que darle click al menos a un boton';
+    invalid3.innerText = 'Tienes que darle click al menos a un boton';
   
     removeText(invalid3);
   }
 
-  return check
+  return check;
 }
 

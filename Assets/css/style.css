@@ -190,11 +190,11 @@ body {
 Clases de validacion
  */
 .valid {
-  border: orangered;
+  border: 1px solid hsl(172deg, 67%, 45%);
 }
 
 .invalid {
-  border: hsl(172deg, 67%, 45%);
+  border: 1px solid red;
 }
 
 /*# sourceMappingURL=style.css.map */
