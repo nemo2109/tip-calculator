@@ -21,9 +21,11 @@ const personas = document.getElementById('total-people');
 //Metodo para seleccionar todos los botones
 const btns = document.querySelectorAll('.form__box__btns__button');
 const resetBtn = document.getElementById('reset-btn');
+
 //Elemento para almacenar texto del invalid
 const invalid1 = document.getElementById('not-valid1');
 const invalid2 = document.getElementById('not-valid2');
+const invalid3 = document.getElementById('not-valid3');
 
 //Variable para almacenar el valor porcentual seleccionado
 let porcenTip;
@@ -36,7 +38,7 @@ porcenDiv.addEventListener('click', (e) => {
     btns[i].classList.remove('active');
   }
 
-  if (e.target.classList.contains('.form__box__btns__button')){
+  if (e.target.classList.caja('.form__box__btns__button')) {
     checkBtn = true
   }
 
@@ -47,7 +49,7 @@ porcenDiv.addEventListener('click', (e) => {
   if (e.target === customTip) {
     porcenTip = e.target;
 
-    check = true;
+    checkCustom = true;
 
     porcenTip.classList.remove('active')
   }
@@ -57,10 +59,11 @@ porcenDiv.addEventListener('click', (e) => {
 form.addEventListener('submit', (e) => {
   // Evitar la action por defecto
   e.preventDefault();
-  if(validateClick(checkBtn)){
+
+  if(validateClick(checkBtn)) {
     //Si le dieron click a custom, entonces dividamos su valor entre 100
     if(checkCustom){
-      porcenTip.value = porcenTip.value/100;
+      porcenTip.value = porcenTip.value / 100;
     }
   
     // Crear un objecto constante con los valores de la forma
@@ -86,7 +89,7 @@ form.addEventListener('submit', (e) => {
 });
 
 //Funcion para actualizar el DOM
-function updateDOM(subtotal, porcenTip, personasF){
+function updateDOM(subtotalF, porcenTipF, personasF){
   const tipFinal = tipCalculator(subTotalF, porcenTipF, personasF);
   
   const totalF = totalFinal(subTotalF, personasF, tipFinal);
@@ -115,11 +118,11 @@ resetBtn.addEventListener('click', (e) => {
   customTip.value = '';
   personas.value = '';
 
-   // Quitar validos
-   subtotal.parentElement.classList.remove('valid');
-   personas.parentElement.classList.remove('valid');
+  // Quitar validos
+  subtotal.parentElement.classList.remove('valid');
+  personas.parentElement.classList.remove('valid');
 
-   // Quitar invalidos
+  // Quitar invalidos
   personas.parentElement.classList.remove('invalid');
   subtotal.parentElement.classList.remove('invalid');
 
@@ -137,7 +140,7 @@ Validacion de forma
 function notZero(input) {
   let check = true;
   
-  if(input <= 0){
+  if (input <= 0) {
     check = false;
   }
 
@@ -152,7 +155,7 @@ function validateAll(subTotalF, personasF) {
     check = false;
 
     subtotal.parentElement.classList.add('invalid');
-    invalid1.innerText = "No puede ser cero o menor que cero";
+    invalid1.innerText = 'No puede ser cero o menor que cero';
 
     removeText(invalid1);
     removeBorder(subtotal, 'invalid');
@@ -174,10 +177,10 @@ function validateAll(subTotalF, personasF) {
 function validateClick(checkBtn){
   let check = true;
 
-  if(!checkBtn){
+  if (!checkBtn) {
     check = false;
   
-    invalid3.innerText = 'Tienes que darle click al menos a un boton';
+  invalid3.innerText = 'Tienes que darle click al menos a un boton';
   
     removeText(invalid3);
   }
