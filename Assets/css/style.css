@@ -186,5 +186,15 @@ body {
     margin: 0%;
   }
 }
+/*
+Clases de validacion
+ */
+.valid {
+  border: orangered;
+}
+
+.invalid {
+  border: hsl(172deg, 67%, 45%);
+}
 
 /*# sourceMappingURL=style.css.map */
