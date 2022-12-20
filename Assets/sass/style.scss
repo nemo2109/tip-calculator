@@ -23,7 +23,8 @@ Color del placeholder
   font-weight: 700;
   margin-right: 0.8rem;
 }
- 
+
+
 
 /*
 Estilos pantalla pequeña
@@ -113,6 +114,8 @@ body{
       #custom-tip{
         background-color: $input-bg;
         text-align: right;
+        color: $input-text;
+        font-size: 2rem;
       }
   
       &__button.active{
@@ -125,7 +128,6 @@ body{
         background-color: $input-bg;
         height: 2.4rem;
         text-align: right;
-
       }
     }
     &__calculate{
@@ -200,7 +202,7 @@ body{
       width: 10%;
     }
   }
-
+  
   .result{
     &__first{
       width: 30rem;
@@ -214,4 +216,15 @@ body{
     }
   }
   
+}
+
+ /*
+Clases de validacion
+ */
+ .valid {
+  border: 1px solid $btn-active;
+}
+
+.invalid {
+  border: 1px solid red;
 }
