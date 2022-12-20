@@ -113,6 +113,8 @@ body{
       #custom-tip{
         background-color: $input-bg;
         text-align: right;
+        color: $input-text;
+        font-size: 2rem;
       }
   
       &__button.active{
@@ -125,7 +127,6 @@ body{
         background-color: $input-bg;
         height: 2.4rem;
         text-align: right;
-
       }
     }
     &__calculate{
