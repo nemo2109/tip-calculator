@@ -27,13 +27,17 @@ const invalid2 = document.getElementById('not-valid2');
 
 //Variable para almacenar el valor porcentual seleccionado
 let porcenTip;
-let custom;
-let check;
+let checkCustom;
+let checkBtn = false;
 
 // Evento para escuchar a que boton le estamos dando click
 porcenDiv.addEventListener('click', (e) => {
   for(let i = 0; i < btns.length; i++){
     btns[i].classList.remove('active');
+  }
+
+  if (e.target.classList.contains('.form__box__btns__button')){
+    checkBtn = true
   }
 
   porcenTip = e.target;
@@ -53,35 +57,35 @@ porcenDiv.addEventListener('click', (e) => {
 form.addEventListener('submit', (e) => {
   // Evitar la action por defecto
   e.preventDefault();
-
-  //Si le dieron click a custom, entonces dividamos su valor entre 100
-  if(check){
-    porcenTip.value = porcenTip.value/100;
-  }
-
-  // Crear un objecto constante con los valores de la forma
-  const formulario = {
-    subTotalF: subtotal.value,
-    porcenTipF: porcenTip.value,
-    personasF: personas.value,
-  }
-
+  if(validateClick(checkBtn)){
+    //Si le dieron click a custom, entonces dividamos su valor entre 100
+    if(checkCustom){
+      porcenTip.value = porcenTip.value/100;
+    }
+  
+    // Crear un objecto constante con los valores de la forma
+    const formulario = {
+      subTotalF: subtotal.value,
+      porcenTipF: porcenTip.value,
+      personasF: personas.value,
+    }
   
 
-  const { subTotalF, porcenTipF, personasF } = formulario;
+    const { subTotalF, porcenTipF, personasF } = formulario;
+    
+      if (validateAll(subTotalF, personasF)) {
+        updateDOM(subTotalF, porcenTipF, personasF);
+        subtotal.parentElement.classList.add('valid');
+        personas.parentElement.classList.add('valid');
   
-    if (validateAll(subTotalF, personasF)) {
-      updateDOM(subTotalF, porcenTipF, personasF);
-      subtotal.parentElement.classList.add('valid');
-      personas.parentElement.classList.add('valid');
-
-      removeBorder(subTotalF, 'valid');
-      removeBorder(personas, 'valid');
+        removeBorder(subTotalF, 'valid');
+        removeBorder(personas, 'valid');
+    }
   }
 
 });
 
-//Funciones para actualizar el DOM
+//Funcion para actualizar el DOM
 function updateDOM(subtotal, porcenTip, personasF){
   const tipFinal = tipCalculator(subTotalF, porcenTipF, personasF);
   
@@ -166,3 +170,18 @@ function validateAll(subTotalF, personasF) {
 
   return check;
 }
+
+function validateClick(checkBtn){
+  let check = true;
+
+  if(!checkBtn){
+    check = false;
+  
+    invalid3.innerText = 'Tienes que darle click al menos a un boton';
+  
+    removeText(invalid3);
+  }
+
+  return check
+}
+
